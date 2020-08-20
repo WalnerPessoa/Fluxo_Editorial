@@ -1,0 +1,3 @@
+INFO:smartsheet.smartsheet:{"request": {"command": "POST https://api.smartsheet.com/2.0/sheets/import?sheetName=Sample+Sheet.xlsx&headerRowIndex=0"}}
+INFO:smartsheet.smartsheet:{"request": {"command": "GET https://api.smartsheet.com/2.0/sheets/8545532768479108"}}
+INFO:smartsheet.smartsheet:{"request": {"command": "PUT https://api.smartsheet.com/2.0/sheets/8545532768479108/rows"}}
