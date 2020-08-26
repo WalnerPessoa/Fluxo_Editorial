@@ -5,11 +5,17 @@ CEP: 70790-075, Brasília – DF, que o nosso colaborador contratado com CLT, o 
 
 Atestamos, que as especificações solicitadas foram atendidas integralmente e com qualidade, inexistindo, até o momento, registros negativos que comprometam o serviço.
 
-TABELA:
-___
-___
+Tabela 1 - PLANO DE ATIVIDADES DE ESTÁGIO CURRICULAR
+===
 
-O total das atividades previstas de execução no período de 17/8/2020 a 18/11/2020 totalizam uma quantidade de 167 horas 
+### Plano de Atividades para o período de 12.02.2020 a 27.06.2020.
+Atividades: (descrever as atividades a serem desenvolvidas na organização)
+
+OBS: O total das atividades previstas de execução no período de 17/8/2020 a 18/11/2020 totalizam uma quantidade de 167 horas 
+
+
+
+
 
 (GERENTE)
 
