@@ -11,25 +11,25 @@ Preparativo no Terminal:
 > python3 -v
 > # criar diretoria
 > mkdir repositorios
-* Atualizar python 3
-https://www.python.org/downloads/
-Baixar arquivo e Instalar
+> * Atualizar python 3
+> https://www.python.org/downloads/
+> Baixar arquivo e Instalar
 
-#### Baixar miniconda
-https://docs.conda.io/en/latest/miniconda.html
-Baixar e instalar
-bash Miniconda3-latest-MacOSX-x86_64.sh
-export PATH=/User/wpessoa/miniconda3/bin:$PATH
+### Baixar miniconda
+> https://docs.conda.io/en/latest/miniconda.html
+> Baixar e instalar
+> bash Miniconda3-latest-MacOSX-x86_64.sh
+> export PATH=/User/wpessoa/miniconda3/bin:$PATH
 
-conda deactivate
-conda create -n py3 python=3
-conda activate py3
+> conda deactivate
+> conda create -n py3 python=3
+> conda activate py3
 
-#### FIM INSTALADO MINICONDA
+### FIM INSTALADO MINICONDA
 
 ### INSTALAÇAO JUPYTER
 
-conda install -c conda-forge jupyterlab
-pip install jupyterlab
-jupyter lab
+> conda install -c conda-forge jupyterlab
+> pip install jupyterlab
+> jupyter lab
 
