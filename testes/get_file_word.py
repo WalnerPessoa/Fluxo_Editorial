@@ -1,3 +1,4 @@
+#get_file_word.py
 #!/usr/bin/env python
 # coding: utf-8
 
@@ -19,16 +20,17 @@ from os.path import isfile, join
 #fileDir = r"/Users/wpessoa/repositorios/Fluxo_Editorial/words/"
 #fileExt = r".docx"
 
-def get_file_word_info(fileDir, fileExt):
+def get_info(fileDir, fileExt,i):
     while True:
         try:
-            onlyfiles = [_ for _ in os.listdir(fileDir) if _.endswith(fileExt)]
-            indice = 0
+            print(os.path.exists(fileDir)) 
+            files_array = [_ for _ in os.listdir(fileDir) if _.endswith(fileExt)]
+            indice = i
             image_array=[]
             table_chunks = []
 
             # abrir conecção com o arquivo Word 
-            doc = docx.Document(files_array[indice])
+            doc = docx.Document(fileDir+'/'+files_array[indice])
 
             # data criação
             dt_doc = doc.core_properties.created
@@ -36,7 +38,7 @@ def get_file_word_info(fileDir, fileExt):
             paragra= [p.text for p in doc.paragraphs]
 
             # extai a quantidade de caracteres
-            caracteres = docx2txt.process(files_array[indice])
+            caracteres = docx2txt.process(fileDir+'/'+files_array[indice])
 
             # gerar um array com tamanho de todas as imagens
             for image in doc.inline_shapes:
@@ -47,11 +49,11 @@ def get_file_word_info(fileDir, fileExt):
             for table in doc.tables:
                 table_chunks.append(table)
             return(dt_doc,len(caracteres),len(image_array),len(table_chunks))
-            break
+            #break
         except ValueError:
             print("Oops!  erro no método verificar diret'ório e extensão do arquivos no argumento desse método")
 
-            
+
             
             
 
