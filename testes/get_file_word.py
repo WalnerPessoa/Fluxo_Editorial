@@ -48,7 +48,7 @@ def get_info(fileDir, fileExt,i):
             # gerar um array com todas as tabelas
             for table in doc.tables:
                 table_chunks.append(table)
-            return(dt_doc,len(caracteres),len(image_array),len(table_chunks))
+            return(files_array[indice][2:8],len(caracteres), len(table_chunks), len(image_array),dt_doc.date())
             #break
         except ValueError:
             print("Oops!  erro no método verificar diret'ório e extensão do arquivos no argumento desse método")
