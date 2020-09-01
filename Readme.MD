@@ -18,7 +18,7 @@ Enfim, a estimativa alta, acontece porque toda a avaliação (por parte do forne
 1. **Scraping python** 
 Criar um método (classe) em python para raspar (scraping) as informações do arquivo Word obtendo informações como quantidade de caracteres, quantidade de imagens, quantidade de tabela. Esse método irá alimentar o vetor input do treinamento de Machine Learning.
 2. **Manipulação de vetores (vetor input)**
-Criar um método (classe) para montar um vetor em python para contruir o vetor (array) input para o treinamento do modelo. Inicialmente já existe uma tabela excel feita pela área financeira da Gerência de Publicidade e Propaganda . Esse código irá completar essa tabela para uso do metodo de aprendizagem de máquina.
+Criar um método (classe) para montar um vetor em python para construir o vetor (array) input para o treinamento do modelo. Inicialmente já existe uma tabela excel feita pela área financeira da Gerência de Publicidade e Propaganda . Esse código irá completar essa tabela para uso do metodo de aprendizagem de máquina.
 3. **Treinamento com algorítmos Random Forest e Regressão Logistica (Machine Learning)**
 Criar um  método (classe) para treinar um modelos de Random Forest ou Regreção Logistica para encontrar a melhor acurácia na previsão dos valores estimados de páginas diagramadas, ou seja inferir a quantidade de páginas diagramadas para o processo editorial com maior probabilidade de acerto.
 
