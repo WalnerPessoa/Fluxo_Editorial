@@ -33,7 +33,9 @@ def get_info(fileDir,files_array):
             for file in files_array:
               
                 # abrir conecção com o arquivo Word 
-                doc = docx.Document(fileDir+'/'+file)
+                #doc = docx.Document(fileDir+'/'+file)
+                doc = docx.Document(fileDir+file)
+
 
                 # data criação
                 dt_doc = doc.core_properties.created
@@ -41,7 +43,9 @@ def get_info(fileDir,files_array):
                 paragra= [p.text for p in doc.paragraphs]
 
                 # extai a quantidade de caracteres
-                caracteres = docx2txt.process(fileDir+'/'+file)
+                #caracteres = docx2txt.process(fileDir+'/'+file)
+                caracteres = docx2txt.process(fileDir+file)
+
 
                 # gerar um array com tamanho de todas as imagens
                 for image in doc.inline_shapes:
@@ -62,10 +66,7 @@ def get_info(fileDir,files_array):
             #break
         except ValueError:
             print("Oops!  erro no método verificar diret'ório e extensão do arquivos no argumento desse método")
-
-
-            
-            
+           
 
     
 
