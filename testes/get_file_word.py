@@ -44,14 +44,14 @@ def get_info(fileDir,files_array):
 
                 # extai a quantidade de caracteres
                 #caracteres = docx2txt.process(fileDir+'/'+file)
-                caracteres = docx2txt.process(fileDir+file)
+                content = docx2txt.process(fileDir+file)
                 #### novo codigo
-                content = []
-                for line in caracteres.splitlines():
+                caracteres = []
+                for line in content.splitlines():
                     #This will ignore empty/blank lines. 
                     if line != '':
                         #Append to list
-                        content.append(line)
+                        caracteres.append(len(line))
                 # fim novo codigo
                 
                 # gerar um array com tamanho de todas as imagens
@@ -64,7 +64,7 @@ def get_info(fileDir,files_array):
                     table_chunks.append(table)
                     
                 # gerar lista resposta
-                list_retur=file[2:8],len(caracteres), len(table_chunks), len(image_array),dt_doc.date()
+                list_retur=file[2:8],sum(caracteres), len(table_chunks), len(image_array),dt_doc.date()
                 
                 # gerar tabela resposta
                 table_return.append(list_retur)
