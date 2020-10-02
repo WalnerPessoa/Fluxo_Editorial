@@ -45,15 +45,8 @@ def get_info(fileDir,files_array):
                 # extai a quantidade de caracteres
                 #caracteres = docx2txt.process(fileDir+'/'+file)
                 caracteres = docx2txt.process(fileDir+file)
-                #### novo codigo
-                content = []
-                for line in caracteres.splitlines():
-                    #This will ignore empty/blank lines. 
-                    if line != '':
-                        #Append to list
-                        content.append(line)
-                # fim novo codigo
-                
+
+
                 # gerar um array com tamanho de todas as imagens
                 for image in doc.inline_shapes:
                     image_array.append([image.width, image.height])
