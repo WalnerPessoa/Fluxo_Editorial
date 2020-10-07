@@ -52,8 +52,21 @@ def get_info(fileDir,files_array):
                     if line != '':
                         #Append to list
                         caracteres.append(len(line))
-                # fim novo codigo
                 
+                # fim novo codigo
+                #### novo codigo
+                # pegando quantidade de estilos que o docuento word possui 
+                # colocando na variável (array_styles)
+                from docx.enum.style import WD_STYLE_TYPE
+                styles = doc.styles
+                array_styles=[]
+                paragraph_styles = [s for s in styles if s.type == WD_STYLE_TYPE.PARAGRAPH]
+                for style in paragraph_styles:
+                    array_styles.append(style.name)
+                    #print(style.name)
+                #print(len(array_styles))
+                # fim novo codigo
+
                 # gerar um array com tamanho de todas as imagens
                 for image in doc.inline_shapes:
                     image_array.append([image.width, image.height])
@@ -64,7 +77,7 @@ def get_info(fileDir,files_array):
                     table_chunks.append(table)
                     
                 # gerar lista resposta
-                list_retur=file[2:8],sum(caracteres), len(table_chunks), len(image_array),dt_doc.date()
+                list_retur=file[2:8],sum(caracteres), len(table_chunks), len(image_array),len(array_styles), dt_doc.date()
                 
                 # gerar tabela resposta
                 table_return.append(list_retur)
