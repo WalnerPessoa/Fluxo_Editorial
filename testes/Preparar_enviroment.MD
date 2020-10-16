@@ -24,6 +24,8 @@ Preparativo no Terminal:
 > conda deactivate
 > conda create -n py3 python=3
 > conda install openpyxl
+> conda install docx2python
+> conda install -U scikit-learn
 > conda activate py3
 
 #### FIM INSTALADO MINICONDA
