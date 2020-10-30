@@ -12,6 +12,8 @@ import docx2txt
 import docx
 import os
 import glob
+import subprocess
+import re
 
 from os import listdir
 from os.path import isfile, join
@@ -31,7 +33,14 @@ def get_info(fileDir,files_array):
             table_return = []
             
             for file in files_array:
-              
+                # raspagem de numero de página do arquivo word ( x.group())
+                pagina_xml = subprocess.Popen(["unzip", "-p", fileDir+file , "docProps/app.xml"], stdout=subprocess.PIPE)
+                output = pagina_xml.communicate()[0]
+                pagina_xml = output.decode("utf-8")
+                x = re.search('(?<=\<Pages\>)(.*)(?=\<\/Pages\>)', pagina_xml)
+                print(x.group())
+                
+                
                 # abrir conecção com o arquivo Word 
                 #doc = docx.Document(fileDir+'/'+file)
                 doc = docx.Document(fileDir+file)
