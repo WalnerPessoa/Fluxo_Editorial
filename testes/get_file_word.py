@@ -34,11 +34,12 @@ def get_info(fileDir,files_array):
             
             for file in files_array:
                 # raspagem de numero de página do arquivo word ( x.group())
-                pagina_xml = subprocess.Popen(["unzip", "-p", fileDir+file , "docProps/app.xml"], stdout=subprocess.PIPE)
-                output = pagina_xml.communicate()[0]
-                pagina_xml = output.decode("utf-8")
-                x = re.search('(?<=\<Pages\>)(.*)(?=\<\/Pages\>)', pagina_xml)
-                print(x.group())
+                pagina_xml_code = subprocess.Popen(["unzip", "-p", fileDir+file , "docProps/app.xml"], stdout=subprocess.PIPE)
+                output = pagina_xml_code.communicate()[0]
+                pagina_xml_str = output.decode("utf-8")
+                x = re.search('(?<=\<Pages\>)(.*)(?=\<\/Pages\>)', pagina_xml_str)
+                pagina_xml = x.group()
+                #print(pagina_xml)
                 
                 
                 # abrir conecção com o arquivo Word 
@@ -86,7 +87,7 @@ def get_info(fileDir,files_array):
                     table_chunks.append(table)
                     
                 # gerar lista resposta
-                list_retur=file[2:8],sum(caracteres), len(table_chunks), len(image_array),len(array_styles), dt_doc.date()
+                list_retur=file[2:8],pagina_xml,sum(caracteres), len(table_chunks), len(image_array),len(array_styles), dt_doc.date()
                 
                 # gerar tabela resposta
                 table_return.append(list_retur)
