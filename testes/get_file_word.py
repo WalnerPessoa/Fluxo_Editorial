@@ -33,11 +33,15 @@ def get_info(fileDir,files_array):
             table_return = []
             
             for file in files_array:
-                # raspagem de numero de página do arquivo word ( x.group())
+                #
+                # raspagem de numero de página do arquivo word ( x.group()) Dados dentro do arquivo app.xml
+                #             
                 pagina_xml_code = subprocess.Popen(["unzip", "-p", fileDir+file , "docProps/app.xml"], stdout=subprocess.PIPE)
                 output = pagina_xml_code.communicate()[0]
+                #print(output)
                 pagina_xml_str = output.decode("utf-8")
                 x = re.search('(?<=\<Pages\>)(.*)(?=\<\/Pages\>)', pagina_xml_str)
+                print(file)
                 pagina_xml = x.group()
                 #print(pagina_xml)
                 
