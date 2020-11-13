@@ -42,7 +42,7 @@ def get_info(fileDir,files_array):
                 #print(output)
                 pagina_xml_str = output.decode("utf-8")
                 x = re.search('(?<=\<Pages\>)(.*)(?=\<\/Pages\>)', pagina_xml_str)
-                print(file)
+                # print(file)
                 try:
                     pagina_xml = x.group()
                 except ValueError:
