@@ -43,12 +43,20 @@ def get_info(fileDir,files_array):
                 pagina_xml_str = output.decode("utf-8")
                 x = re.search('(?<=\<Pages\>)(.*)(?=\<\/Pages\>)', pagina_xml_str)
                 # print(file)
+
+                #try:
+                #    pagina_xml = x.group()
+                #except ValueError:
+                #    print("Oops! XML não encontrado") 
+
                 try:
                     pagina_xml = x.group()
-                except ValueError:
-                    print("Oops! XML não encontrado") 
+                except:
+                    print("Oops! XML não encontrado para file: "+ file) 
+                    continue
                 #print(pagina_xml)
-                
+
+
                 
                 # abrir conecção com o arquivo Word 
                 #doc = docx.Document(fileDir+'/'+file)
